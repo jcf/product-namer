@@ -17,10 +17,12 @@
         color: #fff;
         cursor: pointer;
         font: 16px 'helvetica neue', helvetica, sans-serif;
-        margin-top: 2em;
-        text-align: center;
         text-shadow: 0 2px 0.5em rgba(0, 0, 0, 0.2), 0 4px 2em rgba(0, 0, 0, 0.1);
         text-rendering: optimizeLegibility;
+      }
+
+      .container {
+        text-align: center;
       }
 
       .prefix {
@@ -34,18 +36,42 @@
         opacity: 0.8;
       }
 
+      .logo {
+        margin-bottom: 2em;
+      }
+
+      .logo__prefix {
+        font-weight: bold;
+      }
+
+      .logo__suffix {
+        font-weight: normal;
+        opacity: 0.8;
+      }
+
       .more {
+        font-weight: normal;
         opacity: 0.8;
       }
     </style>
+    <link rel="icon" href="icon.png"></link>
   </head>
   <body>
-    <h1>
-      <span class="prefix">Product</span>
-      <span class="suffix">Namer</span>
-    </h1>
+    <header class="logo">
+      <h3>
+        <span class="logo__prefix">Product</span>
+        <span class="logo__suffix"">Namer</span>
+      </h3>
+    </header>
 
-    <p class="more">That doesn't work for you? How about another!</p>
+    <div class="container">
+      <h1>
+        <span class="prefix">Product</span>
+        <span class="suffix">Namer</span>
+      </h1>
+
+      <h3 class="more">That doesn't work for you? How about another!</h3>
+    </div>
 
     <script src="jquery.js"></script>
     <script>
