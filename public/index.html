@@ -1,0 +1,142 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Product Namer</title>
+    <style>
+      * {
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      body {
+        background-color: #f00c85;
+        color: #fff;
+        cursor: pointer;
+        font: 16px 'helvetica neue', helvetica, sans-serif;
+        margin-top: 2em;
+        text-align: center;
+        text-shadow: 0 2px 0.5em rgba(0, 0, 0, 0.2), 0 4px 2em rgba(0, 0, 0, 0.1);
+        text-rendering: optimizeLegibility;
+      }
+
+      .prefix {
+        font-size: 2em;
+        font-weight: bold;
+      }
+
+      .suffix {
+        font-size: 2em;
+        font-weight: normal;
+        opacity: 0.8;
+      }
+
+      .more {
+        opacity: 0.8;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>
+      <span class="prefix">Product</span>
+      <span class="suffix">Namer</span>
+    </h1>
+
+    <p class="more">That doesn't work for you? How about another!</p>
+
+    <script src="jquery.js"></script>
+    <script>
+      $(function () {
+        var prefixes = [
+          'Buyer',
+          'Client',
+          'Consumer',
+          'Customer',
+          'End User',
+          'Enjoyer',
+          'Individual',
+          'Market',
+          'Patron',
+          'Purchaser',
+          'Shopper',
+          'User',
+          'Vendee'
+        ];
+
+        var suffixes = [
+          'Acumen',
+          'Allotment',
+          'Analysis',
+          'Apportionment',
+          'Barrier',
+          'Click',
+          'Comprehension',
+          'Data',
+          'Detachment',
+          'Discernment',
+          'Disconnection',
+          'Dissolution',
+          'Distribution',
+          'Disunion',
+          'Dividing',
+          'Divination',
+          'Drift',
+          'Hindrance',
+          'Insight',
+          'Intelligence',
+          'Intuition',
+          'Judgment',
+          'Lens',
+          'Logic',
+          'Observation',
+          'Obstruction',
+          'Parting',
+          'Penetration',
+          'Perception',
+          'Perceptivity',
+          'Perspicacity',
+          'Portion',
+          'Rationing',
+          'Reveal',
+          'Rupture',
+          'Sagaciousness',
+          'Sagacity',
+          'Sageness',
+          'Sapience',
+          'Screen',
+          'Segregation',
+          'Separation',
+          'Severance',
+          'Share',
+          'Shrewdness',
+          'Solution',
+          'Splitting',
+          'Spotlight',
+          'Understanding',
+          'Vision',
+          'Wall',
+          'Wavelength',
+          'Wisdom'
+        ];
+
+        function randNth (coll) {
+          return coll[Math.floor(Math.random() * coll.length)];
+        }
+
+        function updateName () {
+          var p = randNth(prefixes),
+              s = randNth(suffixes);
+          $('.prefix').text(p);
+          $('.suffix').text(s);
+          return [p, s];
+        }
+
+        $('body').on('click', updateName);
+        updateName();
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,9 @@
+{
+  "firebase": "product-namer",
+  "public": "public",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}
